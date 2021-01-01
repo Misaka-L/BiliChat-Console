@@ -1,0 +1,20 @@
+﻿<Page x:Class="BiliChat_Console.Pages.Startup.Finish"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BiliChat_Console.Pages.Startup"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Finish">
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="BiliChat Console" Style="{StaticResource MaterialDesignHeadline2TextBlock}"/>
+        <StackPanel Margin="0 10">
+            <TextBlock Text="欢迎使用 BiliChat Console" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"/>
+            <TextBlock Text="一个第三方 BiliChat GUI" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"/>
+        </StackPanel>
+        <Button x:Name="NextButton" Content="开始使用" Click="NextButton_Click"/>
+    </StackPanel>
+</Page>
