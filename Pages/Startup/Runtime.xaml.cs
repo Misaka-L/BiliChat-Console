@@ -1,14 +1,10 @@
-﻿using RestSharp;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -77,7 +73,7 @@ namespace BiliChat_Console.Pages.Startup
                     Directory.CreateDirectory("bin/node");
                 }
 
-                for (int i = 1; i !=zip.Entries.Count; i++)
+                for (int i = 1; i != zip.Entries.Count; i++)
                 {
                     Dispatcher.Invoke(new Action(delegate
                     {

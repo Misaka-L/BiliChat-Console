@@ -9,13 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BiliChat_Console.Pages
 {
@@ -59,7 +52,7 @@ namespace BiliChat_Console.Pages
             process.StartInfo.StandardErrorEncoding = Encoding.UTF8;
 
             process.OutputDataReceived += Process_OutputDataReceived;
-            process.ErrorDataReceived += Process_OutputDataReceived; ; 
+            process.ErrorDataReceived += Process_OutputDataReceived; ;
             process.Exited += Process_Exited;
         }
 

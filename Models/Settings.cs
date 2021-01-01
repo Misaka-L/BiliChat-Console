@@ -1,11 +1,5 @@
 ﻿using LitJson;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BiliChat_Console.Models
 {
@@ -13,7 +7,8 @@ namespace BiliChat_Console.Models
     public class Settings
     {
         private bool _loadAvatar { get; set; } = true;
-        public bool loadAvatar {
+        public bool loadAvatar
+        {
             get
             {
                 return _loadAvatar;
