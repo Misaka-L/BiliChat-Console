@@ -3,6 +3,10 @@
 [下载](https://github.com/Misaka-L/BiliChat-Console/releases)  
 
 ![软件截图](https://cdn.jsdelivr.net/gh/Misaka-L/BiliChat-Console@main/docs/Screenshot.png)
+[看不到截图的点这](https://cdn.jsdelivr.net/gh/Misaka-L/BiliChat-Console@main/docs/Screenshot.png)  
+### 注:
+- 直播弹幕来自 [沙月ちゃん](https://live.bilibili.com/4767523)
+- 背景图片是 [DD情报局](https://space.bilibili.com/473099203) 的专栏 [【新年献词】要为世界发亮 | DD情报局2021新年献词](https://www.bilibili.com/read/cv9089096) 的封面
 ## 这是个什么？
 [BiliChat](https://github.com/3Shain/BiliChat) 的第三方 GUI 管理器。  
 关于 BiliChat 的详细信息请查阅 [BiliChat 的 Github 仓库](https://github.com/3Shain/BiliChat) 和 [BiliChat 官方网站](https://bilichat.3shain.com/)
