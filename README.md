@@ -2,7 +2,7 @@
 一个 BiliChat 的第三方 GUI  
 [下载](https://github.com/Misaka-L/BiliChat-Console/releases)  
 
-![软件截图](https://cdn.jsdelivr.net/gh/Misaka-L/BiliChat-Console@main/docs/Screenshot.png)
+![软件截图](https://cdn.jsdelivr.net/gh/Misaka-L/BiliChat-Console@main/docs/Screenshot.png)  
 [看不到截图的点这](https://cdn.jsdelivr.net/gh/Misaka-L/BiliChat-Console@main/docs/Screenshot.png)  
 ### 注:
 - 直播弹幕来自 [沙月ちゃん](https://live.bilibili.com/4767523)
