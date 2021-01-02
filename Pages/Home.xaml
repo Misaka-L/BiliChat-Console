@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BiliChat_Console.Pages"
       xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:models="clr-namespace:BiliChat_Console.Models"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Home">
@@ -239,7 +240,48 @@
                             </Expander>
                             <Expander Header="弹幕表情设置" Padding="10">
                                 <StackPanel>
-                                    <TextBlock Text="还没做呢..."/>
+                                    <md:Card Padding="16" Margin="0 0 0 10">
+                                        <StackPanel>
+                                            <TextBlock Text="添加新的弹幕表情" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"/>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel>
+                                                    <TextBox x:Name="CustomEmotionImageUrl" md:HintAssist.Hint="图片地址" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                                    <TextBox x:Name="CustomEmotionDanmakuCommand" md:HintAssist.Hint="弹幕指令" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                                </StackPanel>
+                                                <Button x:Name="AddCustomEmotionButton" Height="40" Width="40" Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                        Content="{md:PackIcon Kind=Add}" VerticalAlignment="Center" Grid.Column="1"
+                                                        Margin="5 0 0 0" Click="AddCustomEmotionButton_Click"/>
+                                            </Grid>
+                                        </StackPanel>
+                                    </md:Card>
+                                    <ItemsControl x:Name="CustomEmotionsItemsControl">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="models:Customemotion">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="50"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Height="50" MouseUp="Image_MouseUp" Stretch="UniformToFill" Source="{Binding Path=source}"/>
+                                                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5 0">
+                                                        <TextBlock Text="弹幕指令:" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"/>
+                                                        <TextBlock Text="{Binding Path=command}" Style="{StaticResource MaterialDesignBody2TextBlock}"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center">
+                                                        <Button x:Name="EditCustomemotionButton" Height="30" Width="30" Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                                Content="{md:PackIcon Kind=Edit, Size=18}" Tag="{Binding}" Margin="5 0" Click="EditCustomemotionButton_Click"/>
+                                                        <Button x:Name="DeleteCustomemotionButton" Height="30" Width="30" Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                                Content="{md:PackIcon Kind=Delete, Size=18}" Tag="{Binding}" Click="DeleteCustomemotionButton_Click"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
                                 </StackPanel>
                             </Expander>
                         </StackPanel>

@@ -15,8 +15,8 @@
 
             <tb:TaskbarIcon x:Key="Taskbar"
                             ToolTipText="BiliChat Console - 第三方 BiliChat GUI"
-                            IconSource="Assets/Image/BiliChat.ico">
-
+                            IconSource="Assets/Image/BiliChat.ico"
+                            PopupActivation="RightClick">
             </tb:TaskbarIcon>
         </ResourceDictionary>
     </Application.Resources>

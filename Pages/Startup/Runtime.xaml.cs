@@ -52,7 +52,14 @@ namespace BiliChat_Console.Pages.Startup
                 }));
 
                 string tempPath = Path.GetTempFileName();
-                DownloadHttpFile("https://nodejs.org/dist/v14.15.3/node-v14.15.3-win-x64.zip", tempPath, NodeJsProgress);
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    DownloadHttpFile("https://npm.taobao.org/mirrors/node/v14.15.3/node-v14.15.3-win-x64.zip", tempPath, NodeJsProgress);
+                }
+                else
+                {
+                    DownloadHttpFile("https://npm.taobao.org/mirrors/node/v14.15.3/node-v14.15.3-win-x86.zip", tempPath, NodeJsProgress);
+                }
 
                 Dispatcher.Invoke(new Action(delegate
                 {

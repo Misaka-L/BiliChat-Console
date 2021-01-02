@@ -86,6 +86,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserControls\Dialog\CustomemotionEditDialog.xaml.cs">
+      <DependentUpon>CustomemotionEditDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dialog\ImageDialog.xaml.cs">
+      <DependentUpon>ImageDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Dialog\InputTextDialog.xaml.cs">
       <DependentUpon>InputTextDialog.xaml</DependentUpon>
     </Compile>
@@ -114,6 +120,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Startup\Welcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Dialog\CustomemotionEditDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Dialog\ImageDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

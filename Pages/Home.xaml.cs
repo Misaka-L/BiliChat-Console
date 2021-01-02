@@ -36,6 +36,7 @@ namespace BiliChat_Console.Pages
             LevelFilter.Text = App.Settings.levelFilter.ToString();
             MinGiftValue.Text = App.Settings.minGiftValue.ToString();
             WordFilterItemsControl.ItemsSource = App.Settings.wordFilter;
+            CustomEmotionsItemsControl.ItemsSource = App.Settings.customEmotions;
 
 
             process.StartInfo.FileName = @".\bin\node.exe";
@@ -302,6 +303,65 @@ namespace BiliChat_Console.Pages
             App.Settings.blackList = list.ToArray();
 
             BlackListItemsControl.ItemsSource = App.Settings.blackList;
+        }
+
+        private void Image_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DialogHost.Show(new ImageDialog(((Image)sender).Source));
+        }
+
+        private void AddCustomEmotionButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(CustomEmotionImageUrl.Text) && !string.IsNullOrWhiteSpace(CustomEmotionDanmakuCommand.Text))
+            {
+                var list = new List<Customemotion>();
+                try
+                {
+                    list = App.Settings.customEmotions.ToList();
+                }
+                catch { }
+
+                if (!list.Any(a => a.command == CustomEmotionDanmakuCommand.Text || a.source == CustomEmotionImageUrl.Text))
+                {
+                    list.Add(new Customemotion { command = CustomEmotionDanmakuCommand.Text, source = CustomEmotionImageUrl.Text });
+                    App.Settings.customEmotions = list.ToArray();
+
+                    CustomEmotionsItemsControl.ItemsSource = App.Settings.customEmotions;
+
+                    CustomEmotionImageUrl.Text = "";
+                    CustomEmotionDanmakuCommand.Text = "";
+                }
+            }
+        }
+
+        private async void EditCustomemotionButton_Click(object sender, RoutedEventArgs e)
+        {
+            var list = App.Settings.customEmotions.ToList();
+            var tag = (Customemotion)((Button)sender).Tag;
+            var result = (Customemotion)await DialogHost.Show(new CustomemotionEditDialog(tag.source, tag.command));
+            if (result != null && !list.All(a => a == result))
+            {
+                for (int i = 0;i != list.Count; i++)
+                {
+                    if (list[i] == tag)
+                    {
+                        list[i] = result;
+                        break;
+                    }
+                }
+
+                App.Settings.customEmotions = list.ToArray();
+                CustomEmotionsItemsControl.ItemsSource = App.Settings.customEmotions;
+            }
+        }
+
+        private void DeleteCustomemotionButton_Click(object sender, RoutedEventArgs e)
+        {
+            var list = App.Settings.customEmotions.ToList();
+            list.Remove((Customemotion)((Button)sender).Tag);
+
+            App.Settings.customEmotions = list.ToArray();
+            CustomEmotionsItemsControl.ItemsSource = App.Settings.customEmotions;
         }
     }
 }
