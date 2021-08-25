@@ -1,5 +1,7 @@
 # BiliChat-Console
 一个 BiliChat 的第三方 GUI  
+> BiliChat 已改名重写为 [Comen](https://github.com/3Shain/Comen)，故该项目停止维护  
+
 [下载](https://github.com/Misaka-L/BiliChat-Console/releases)  
 
 ![软件截图](https://cdn.jsdelivr.net/gh/Misaka-L/BiliChat-Console@main/docs/Screenshot.png)  
